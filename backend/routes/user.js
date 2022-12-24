@@ -1,4 +1,5 @@
 const express = require("express");
+const { getUser } = require("../controllers/message");
 const {
   register,
   activateAccount,
@@ -50,6 +51,7 @@ router.put("/addToSearchHistory", authUser, addToSearchHistory);
 router.get("/getSearchHistory", authUser, getSearchHistory);
 router.put("/removeFromSearch", authUser, removeFromSearch);
 router.get("/getFriendsPageInfos", authUser, getFriendsPageInfos);
+router.get('/getUser/:id', authUser, getUser)
 
 
 module.exports = router;
