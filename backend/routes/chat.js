@@ -5,7 +5,7 @@ const { authUser } = require("../middlwares/auth");
 
 
 router.post('/chat', authUser, createChat)
-router.get('/chat/:userId', userChats)
-// router.get('/chat/find/:firstId/:secondId', findChat)
+router.get('/chat/:userId', authUser, userChats)
+router.get('/chat/find/:firstId/:secondId', findChat)
 
 module.exports = router
